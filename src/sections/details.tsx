@@ -1,6 +1,21 @@
-import { FormControl, FormLabel, Input, VStack, Heading, Text, SimpleGrid, GridItem, Select, Checkbox, Button } from '@chakra-ui/react';
+import {
+  FormControl,
+  FormLabel,
+  Input,
+  VStack,
+  Heading,
+  Text,
+  SimpleGrid,
+  GridItem,
+  Select,
+  Checkbox,
+  Button,
+  useBreakpointValue,
+} from '@chakra-ui/react';
 
 const Details = () => {
+  const colSpan = useBreakpointValue({ base: 2, md: 1 });
+
   return (
     <VStack w='full' h='full' spacing={10} p={10} alignItems='flex-start'>
       <VStack spacing={3} alignItems='flex-start'>
@@ -8,13 +23,13 @@ const Details = () => {
         <Text>If you already have an account, click here to log in.</Text>
       </VStack>
       <SimpleGrid columns={2} columnGap={3} rowGap={6} w='full'>
-        <GridItem colSpan={1}>
+        <GridItem colSpan={colSpan}>
           <FormControl>
             <FormLabel>First Name</FormLabel>
             <Input placeholder='John' />
           </FormControl>
         </GridItem>
-        <GridItem colSpan={1}>
+        <GridItem colSpan={colSpan}>
           <FormControl>
             <FormLabel>Last Name</FormLabel>
             <Input placeholder='Doe' />
@@ -47,7 +62,7 @@ const Details = () => {
           <Checkbox defaultChecked>Ship to the billing address.</Checkbox>
         </GridItem>
         <GridItem colSpan={2}>
-          <Button size='lg' w='full' bg='#8AC919' color='#fff'>
+          <Button colorScheme='brand' size='lg' w='full' color='#fff'>
             Place order
           </Button>
         </GridItem>
