@@ -2,7 +2,7 @@ import { FormControl, FormLabel, Input, VStack, Heading, Text, SimpleGrid, GridI
 
 const Details = () => {
   return (
-    <VStack w='full' h='full' p={10} spacing={10} alignItems='flex-start'>
+    <VStack w='full' h='full' spacing={10} p={10} alignItems='flex-start'>
       <VStack spacing={3} alignItems='flex-start'>
         <Heading size='2xl'>Your details</Heading>
         <Text>If you already have an account, click here to log in.</Text>
@@ -44,11 +44,11 @@ const Details = () => {
           </FormControl>
         </GridItem>
         <GridItem colSpan={2}>
-          <Checkbox defaultChecked>Ship to billing address.</Checkbox>
+          <Checkbox defaultChecked>Ship to the billing address.</Checkbox>
         </GridItem>
         <GridItem colSpan={2}>
-          <Button size='lg' w='full'>
-            Place Order
+          <Button size='lg' w='full' bg='#8AC919' color='#fff'>
+            Place order
           </Button>
         </GridItem>
       </SimpleGrid>

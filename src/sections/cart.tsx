@@ -18,7 +18,7 @@ const Cart = () => {
   const secondaryTextColor = useColorModeValue('gray.600', 'gray.400');
 
   return (
-    <VStack w='full' h='full' p={10} spacing={6} alignItems='flex-start' bg={bgColor}>
+    <VStack w='full' h='full' p={10} spacing={6} alignItems='flex-start' bgColor={bgColor}>
       <VStack spacing={3} alignItems='flex-start'>
         <Heading size='2xl'>Your cart</Heading>
         <Text>
@@ -28,9 +28,10 @@ const Cart = () => {
           </Button>
         </Text>
       </VStack>
+
       <HStack spacing={6} alignItems='center' w='full'>
         <AspectRatio ratio={1} w={24}>
-          <Image src='https://bit.ly/dan-abramov' alt='product' />
+          <Image src='https://i.esdrop.com/d/f/KwrGH1p1Zl/IS9XFKrmS8.jpg' alt='product' />
         </AspectRatio>
         <Stack spacing={0} w='full' direction='row' justifyContent='space-between' alignItems='center'>
           <VStack w='full' spacing={0} alignItems='flex-start'>
@@ -42,6 +43,7 @@ const Cart = () => {
           </Heading>
         </Stack>
       </HStack>
+
       <VStack spacing={4} alignItems='stretch' w='full'>
         <HStack justifyContent='space-between'>
           <Text color={secondaryTextColor}>Subtotal</Text>
