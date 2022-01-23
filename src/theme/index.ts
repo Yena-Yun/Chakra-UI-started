@@ -1,4 +1,5 @@
 import { extendTheme, theme as base, withDefaultColorScheme, withDefaultVariant } from '@chakra-ui/react';
+import { mode } from '@chakra-ui/theme-tools';
 
 const inputSelectStyles = {
 	variants: {
@@ -16,8 +17,14 @@ const inputSelectStyles = {
 				borderRadius: 'none'
 			}
 		}
-			
 	}
+}
+
+const brandRing = {
+	_focus: {
+		ring: 2,
+		ringColor: 'brand.500'
+	},
 }
 
 const theme = extendTheme({
@@ -36,20 +43,35 @@ const theme = extendTheme({
 		}
 	},
 	fonts: {
+		// 2항: fallback 폰트 (chakra ui의 default 폰트를 가져옴)
 		heading: `Montserrat, ${base.fonts?.heading}`,
 		body: `Inter, ${base.fonts?.body}`,
 	},
 	components: {
+		Button: {
+			variants: {
+				primary: (props) => ({
+					rounded: 'none',
+					...brandRing,
+					// mode(light모드, dark모드)
+					color: mode('white', 'gray.800')(props),
+					backgroundColor: mode('brand.500', 'brand.200')(props),
+					_hover: {
+						backgroundColor: mode('brand.600', 'brand.300')(props)
+					},
+					_active: {
+						backgroundColor: mode('brand.700', 'brand.400')(props)
+					}
+				})
+			}
+		},
 		Input: { ...inputSelectStyles },
 		Select: { ...inputSelectStyles },
 		Checkbox: {
 			baseStyle: {
 				control: {
 					borderRadius: 'none',
-					_focus: {
-						ring: 2,
-						ringColor: 'brand.500'
-					},
+					...brandRing,
 				},
 			},
 		},

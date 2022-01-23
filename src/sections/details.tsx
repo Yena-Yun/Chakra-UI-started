@@ -62,7 +62,8 @@ const Details = () => {
           <Checkbox defaultChecked>Ship to the billing address.</Checkbox>
         </GridItem>
         <GridItem colSpan={2}>
-          <Button colorScheme='brand' size='lg' w='full' color='#fff'>
+          {/* colorScheme='brand': bg, color, hover 모두 지정된 스타일로 한 번에 적용 */}
+          <Button variant='primary' size='lg' w='full'>
             Place order
           </Button>
         </GridItem>
